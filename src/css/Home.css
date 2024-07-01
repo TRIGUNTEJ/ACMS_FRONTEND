@@ -1,18 +1,29 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #050505 0%, #050505 55%, #313030 55%, #313030 58%, transparent 58%);
     color: white;
 }
-
+.content{
+  display: flex;
+}
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
+    width:55%;
+    background-color: #050505;
     margin-top: 0px;
     padding-left: 20px;
+}
+.container2{
+  display: flex;
+  flex-direction: column;
+  background-color:#313030;
+  width:3%;
+  height: 100vh;
+  z-index: 1000;
 }
 
 .button-container {
@@ -286,7 +297,66 @@ body {
     opacity: 0;
     transform: translateX(100%);
   }
-  
+  @media (max-width: 768px) {
+    .image-container {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .container {
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .login-form, .registration-form {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+  .content {
+      flex-direction: column-reverse;
+      overflow-y: auto;
+  }
+
+  .container {
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      padding: 20px;
+      width: 100%;
+      font-size: 8px;
+      top: 0;
+  }
+
+  .container2 {
+      display: none;
+  }
+
+  .image-container {
+      width: 100%;
+      height: auto;
+      background-size: cover;
+      background-position: center;
+      margin-top: 20px; 
+  }
+
+  .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+  }
+
+  .login-form, .registration-form {
+      width: 100%;
+      margin-left: 0;
+      padding: 15px;
+  }
+}
+
   
  
   

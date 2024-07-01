@@ -40,20 +40,23 @@ const Home = () => {
           <div className="success-message">Registration successful!</div>
         </div>
       )}
-      <div className="image-container">
-        {!showLoginForm && !showRegistrationForm && <img src={homeImage} alt="Home" />}
-        {showLoginForm && <LoginForm hidePopup={hidePopup} />}
-        {showRegistrationForm && <RegistrationForm hidePopup={hidePopup} onSuccess={handleRegistrationSuccess} />}
-      </div>
-
-      <div className="container">
-        <h1>Embark on Your Academic Journey:</h1>
-        <h1 id="animated-text">Introducing Our Premier Course Registration Portal</h1>
-        <div className="button-container">
-          <button className="login-button" onClick={handleLoginClick}>Login</button>
-          <button className="login-button" onClick={handleRegistrationClick}>Register</button>
+      <div className = "content">
+        <div className="image-container">
+          {!showLoginForm && !showRegistrationForm && <img src={homeImage} alt="Home" />}
+          {showLoginForm && <LoginForm hidePopup={hidePopup} />}
+          {showRegistrationForm && <RegistrationForm hidePopup={hidePopup} onSuccess={handleRegistrationSuccess} />}
         </div>
-      </div>
+      
+        <div className="container">
+          <h1>Embark on Your Academic Journey:</h1>
+          <h1 id="animated-text">Introducing Our Course Registration Portal</h1>
+          <div className="button-container">
+            <button className="login-button" onClick={handleLoginClick}>Login</button>
+            <button className="login-button" onClick={handleRegistrationClick}>Register</button>
+          </div>
+        </div>
+        <div className = "container2">      </div>
+       </div>
     </div>
   );
 };
