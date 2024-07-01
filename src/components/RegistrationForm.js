@@ -14,7 +14,7 @@ const RegistrationForm = ({ hidePopup, onSuccess }) => {
   const handleRegister = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:3041/register", { email, name, password })
+    axios.post("https://acms-backend-c1vn.onrender.com/register", { email, name, password })
       .then(req => {
         console.log(req);
         onSuccess();
