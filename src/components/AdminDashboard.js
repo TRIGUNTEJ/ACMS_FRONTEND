@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../css/AdminDashboard.css';
+import '../css/AdminDashboard.css'; 
 
 const AdminDashboard = () => {
   const [courses, setCourses] = useState([]);
