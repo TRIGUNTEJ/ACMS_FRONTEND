@@ -1,0 +1,53 @@
+.student-dashboard {
+    padding: 20px;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+  }
+  
+  .student-dashboard h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .error-message {
+    color: #ff0000;
+    background-color: #ffe0e0;
+    border: 1px solid #ffcccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .course-card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .course-card h3 {
+    margin: 0 0 10px;
+  }
+  
+  .course-card p {
+    margin: 0 0 5px;
+  }
+  
+  .view-course-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .view-course-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -20,8 +20,12 @@ const LoginForm = ({ hidePopup }) => {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.message === "Login successful") {
-          navigate('/admin-dashboard');
+        if (data.message === 'Login successful') {
+          if (data.role === 'admin') {
+            navigate('/admin-dashboard');
+          } else {
+            navigate('/user-dashboard');
+          }
         } else {
           setError(data.error);
         }
