@@ -319,15 +319,17 @@ body {
 @media (max-width: 480px) {
   .content {
       flex-direction: column-reverse;
-      overflow-y: auto;
+      overflow-y: scroll;
+      overflow-x: hidden;
   }
 
   .container {
       align-items: center;
       justify-content: center;
       height: auto;
-      padding: 20px;
+      padding: 6px;
       width: 100%;
+      height: 100%;
       font-size: 8px;
       top: 0;
   }
