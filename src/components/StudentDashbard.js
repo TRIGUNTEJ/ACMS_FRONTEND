@@ -25,7 +25,7 @@ const StudentDashboard = () => {
 
   return (
     <div className="student-dashboard">
-      <h2>Admin Dashboard - Courses</h2>
+      <h2>Student Dashboard - Courses</h2>
       {error && <p className="error-message">{error}</p>}
       <div className="courses-list">
         {courses.map(course => (
