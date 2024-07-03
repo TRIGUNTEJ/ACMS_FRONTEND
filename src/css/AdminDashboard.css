@@ -1,7 +1,5 @@
-/* AdminDashboard.css */
-/* AdminDashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Base styles */
 .admin-dashboard {
   display: flex;
   flex-direction: column;
@@ -25,12 +23,18 @@
 
 .navbar-content .left-content {
   font-size: 1.5em;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .navbar-content .right-content {
   display: flex;
   align-items: center;
   margin-right: 30px;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .navbar-content .right-content span {
@@ -49,6 +53,9 @@
 
 .navbar-content .logout-button:hover {
   background-color: #c82333;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dashboard-content {
@@ -58,7 +65,6 @@
   background-color: pink;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .navbar-content {
     flex-direction: column;

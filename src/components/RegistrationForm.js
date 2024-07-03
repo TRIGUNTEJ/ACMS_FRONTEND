@@ -1,5 +1,3 @@
-// RegistrationForm.js
-
 import React, { useState } from 'react';
 import '../css/Home.css';
 import axios from 'axios';
