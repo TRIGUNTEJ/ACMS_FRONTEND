@@ -23,6 +23,7 @@ const LoginForm = ({ hidePopup }) => {
         if (data.message === 'Login successful') {
           if (data.role === 'admin') {
             navigate('/admin-dashboard');
+            localStorage.setItem('adminEmail', username);
           } else {
             navigate('/student-dashboard');
           }
