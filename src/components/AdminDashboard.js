@@ -15,7 +15,7 @@ const AdminDashboard = () => {
         },
       })
         .then(response => response.json())
-        .then(data => {
+        .then(data => { console.log(data)
           setAdminName(data.name); 
         })
         .catch(err => {
