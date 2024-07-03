@@ -8,7 +8,7 @@ const AdminDashboard = () => {
     const adminEmail = localStorage.getItem('adminEmail');
     
     if (adminEmail) {
-      fetch(`https://acms-backend-c1vn.onrender.com/api/admin-dashboard?email=${adminEmail}`, {
+      fetch(`https://acms-backend-c1vn.onrender.com/admin-dashboard?email=${adminEmail}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
