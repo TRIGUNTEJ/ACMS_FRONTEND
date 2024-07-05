@@ -293,6 +293,7 @@
     max-width: 400px;
     max-height: 675px;
     overflow: auto;
+    z-index: 1002;
   }
   .add-course-form label {
     display: block;
