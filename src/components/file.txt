@@ -1,6 +1,0 @@
-
-
-tasks:
-1. update the codes to check whether the given mail is valid one or not(message should "Email does not exist" in the nortification pop but in red color border and text with cross symbol")
-2. if valid check it exists in the dataabse or not if exists (message should "username alredy exists" in the nortification pop but in red color border and text with cross symbol")
-3. while typifn the passwod the reqirements should be displayed in a floating cloud beside the password text box stating(requirements:1.minimum one capital,2.minimum one charatcer,3.minimum one number 4.lenth of the password should be minimum 12 characters for every cleareance of reqirement a green tick should be appeared beside the reqirement )
