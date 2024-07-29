@@ -11,32 +11,26 @@ const AdminDashboard = () => {
   useEffect(() => {
     const adminEmail = localStorage.getItem('adminEmail');
     if (adminEmail) {
-      fetch(`https://acms-backend-c1vn.onrender.com/admin-dashboard`, {
+      fetch(`https://acms-backend-c1vn.onrender.com/admin-dashboard?email=${adminEmail}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
-        credentials: 'include', 
+        credentials: 'include',
       })
-      .then(response => {
-        if (!response.ok) {
-          console.error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        setAdminName(data.name);
-      })
-      .catch(err => {
-        console.error('Error fetching admin details:', err);
-        navigate('/');
-      });      
+        .then(response => response.json())
+        .then(data => { 
+          console.log(data);
+          setAdminName(data.name);
+        })
+        .catch(err => {
+          console.error('Error fetching admin details:', err);
+          navigate('/');
+        });
     } else {
       navigate('/');
     }
   }, [navigate]);
-  
 
   const handleLogout = () => {
     fetch('https://acms-backend-c1vn.onrender.com/logout', {
