@@ -18,15 +18,20 @@ const AdminDashboard = () => {
         },
         credentials: 'include', 
       })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          setAdminName(data.name);
-        })
-        .catch(err => {
-          console.error('Error fetching admin details:', err);
-          navigate('/');
-        });
+      .then(response => {
+        if (!response.ok) {
+          console.error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        setAdminName(data.name);
+      })
+      .catch(err => {
+        console.error('Error fetching admin details:', err);
+        navigate('/');
+      });      
     } else {
       navigate('/');
     }

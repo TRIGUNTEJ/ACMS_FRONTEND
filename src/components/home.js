@@ -55,7 +55,6 @@ const Home = () => {
             <button className="login-button" onClick={handleRegistrationClick}>Register</button>
           </div>
         </div>
-        <div className = "container2">      </div>
        </div>
     </div>
   );
