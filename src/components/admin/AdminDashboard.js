@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const adminEmail = localStorage.getItem('adminEmail');
     if (adminEmail) {
-      fetch(`https://acms-backend-c1vn.onrender.com/admin-dashboard`, {
+      fetch(`https://acms-backend-c1vn.onrender.com/admin-dashboard?email=${adminEmail}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
