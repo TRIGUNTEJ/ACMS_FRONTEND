@@ -16,10 +16,10 @@ const AdminDashboard = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        credentials: 'include',
+        credentials: 'include', 
       })
         .then(response => response.json())
-        .then(data => { 
+        .then(data => {
           console.log(data);
           setAdminName(data.name);
         })
@@ -31,6 +31,7 @@ const AdminDashboard = () => {
       navigate('/');
     }
   }, [navigate]);
+  
 
   const handleLogout = () => {
     fetch('https://acms-backend-c1vn.onrender.com/logout', {
