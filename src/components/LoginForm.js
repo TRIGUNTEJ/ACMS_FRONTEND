@@ -17,7 +17,7 @@ const LoginForm = ({ hidePopup }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ email: username, password: password }),
-      credentials: 'include', 
+      credentials: 'include', // Important for including cookies
     })
       .then(response => response.json())
       .then(data => {
