@@ -7,7 +7,7 @@ const StudentDashboard = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3041/api/courses', {
+    fetch('https://acms-backend-c1vn.onrender.com/api/courses', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

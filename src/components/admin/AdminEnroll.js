@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'boxicons/css/boxicons.min.css';
 import '../../css/admin/admin_enroll.css'; 
-const AdminDashboard = () => {
+
+const AdminEnroll = () => {
   const [adminName, setAdminName] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showAddCourseForm, setShowAddCourseForm] = useState(false);
@@ -53,6 +54,7 @@ const AdminDashboard = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [navigate]);
+
   useEffect(() => {
     axios.get('https://acms-backend-c1vn.onrender.com/courses')
       .then(response => {
@@ -93,8 +95,7 @@ const AdminDashboard = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios
-      .post('https://acms-backend-c1vn.onrender.com/add-course', {
+    axios.post('https://acms-backend-c1vn.onrender.com/add-course', {
         CourseName,
         CourseCode,
         Department,
@@ -105,11 +106,13 @@ const AdminDashboard = () => {
       })
       .then(response => {
         console.log(response.data);
+        setShowAddCourseForm(false);
       })
       .catch(error => {
         console.error('Error adding course:', error);
       });
   };
+
   const handleSectionChange = (index, value) => {
     const updatedSections = [...Sections];
     updatedSections[index] = value;
@@ -124,6 +127,10 @@ const AdminDashboard = () => {
     const updatedSections = [...Sections];
     updatedSections.splice(index, 1);
     setSections(updatedSections);
+  };
+
+  const viewCourseDetails = (course) => {
+    navigate('/admin-course-details', { state: { course } });
   };
 
   return (
@@ -161,7 +168,7 @@ const AdminDashboard = () => {
             <span className="tooltip">Student Management</span>
           </li>
           <li>
-            <button className="nav-button" onClick={() => navigateTo('/faculty')}>
+            <button className="nav-button" onClick={() => navigateTo('/admin-faculty')}>
               <i className="bx bx-group"></i>
               <span className="links_name">Faculty Management</span>
             </button>
@@ -230,7 +237,7 @@ const AdminDashboard = () => {
               <label htmlFor="Semester">Semester:</label>
               <input type="text" id="Semester" name="Semester" value={Semester} onChange={e => setSemester(e.target.value)} required />
 
-              <div className="sections-container">
+            <div className="sections-container">
               <label htmlFor="Sections">Sections:</label>
               {Sections.map((section, index) => (
                 <div className="section-item" key={index}>
@@ -268,22 +275,19 @@ const AdminDashboard = () => {
               <div className="course-preview">
                 <h6>Course Code: {course.CourseCode}</h6>
                 <h2>{course.CourseName}</h2>
-                <p>view details</p>
               </div>
               <div className="course-info">
                 <p>Department: {course.Department}</p>
                 <p>Credits: {course.Credits}</p>
                 <p>Semester: {course.Semester}</p>
-                <button className="btn">Enroll</button>
+                <button className="btn" onClick={() => viewCourseDetails(course)}>View Details</button>
               </div>
             </div>
           ))}
         </div>
-
-
       </section>
     </div>
   );
 };
 
-export default AdminDashboard;
+export default AdminEnroll;
