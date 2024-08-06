@@ -5,7 +5,7 @@ import AdminDashboard from './components/admin/AdminDashboard';
 import AdminEnroll from './components/admin/AdminEnroll'
 import StudentDashboard from './components/StudentDashbard';
 import AdminViewCourse from './components/admin/AdminCourseDetails';
-import AdminFaculty from './components/admin/FacultyManagement';
+import AdminFaculty from './components/admin/AdminFacultyManagement';
 function App() {
   return (
     <Router>
